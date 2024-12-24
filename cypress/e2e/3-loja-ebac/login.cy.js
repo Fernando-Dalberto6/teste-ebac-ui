@@ -67,8 +67,15 @@ const perfil = require('../../fixtures/perfil.json')
       cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, osasco (não é osasco? Sair)')
    } )
       
-     
+    
+ });
 
-   
+ it.only('Deve fazer login com sucesso - usando comando customizados', () => {
+
+   cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/') 
+    
+   cy.login('Osasco@gmail.com', 'Cachorro quente')
+   cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, osasco (não é osasco? Sair)')
+
    
  });
